@@ -176,3 +176,11 @@
   footer .footer-top>div{align-items:center;row-gap:7px}
   footer .copyright{padding:14px 0}
 }
+
+/* PC completion pass: navigation and intentionally inactive footer routes */
+@media (min-width:1101px){
+  .site-header nav{gap:24px}
+}
+
+#practical-knowhow{scroll-margin-top:96px}
+footer a[aria-disabled="true"]{pointer-events:none;cursor:default}
