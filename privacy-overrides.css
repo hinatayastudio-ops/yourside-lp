@@ -1,0 +1,10 @@
+/* Render the supplied official logo asset at the same crop and proportions as the approved LP header. */
+.policy-logo{width:252px;height:54px;align-items:center;overflow:hidden}
+.policy-logo img{width:100%;height:100%;max-width:none;object-fit:cover;object-position:center}
+.policy-footer .policy-logo{width:252px;height:54px}
+.policy-footer .policy-logo img{width:100%;height:100%;filter:invert(1);mix-blend-mode:screen;opacity:1}
+
+@media(max-width:760px){
+  .policy-logo{width:144px;height:34px}
+  .policy-footer .policy-logo{width:168px;height:38px}
+}

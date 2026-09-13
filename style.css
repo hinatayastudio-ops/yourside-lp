@@ -6,7 +6,7 @@
 .official-logo{width:252px;height:54px;overflow:hidden;align-items:center}
 .official-logo img{display:block;width:100%;height:100%;max-width:none;object-fit:cover;object-position:center}
 .hero{background:#fff}
-.hero h1 span{color:#008650}
+.hero h1>span:not(.hero-first-line):not(.hero-mobile-continue):not(.hero-mobile-end){color:#008650}
 .hero-reference-visual{display:block;overflow:hidden;align-self:end;justify-self:stretch;height:540px}
 .hero-reference-visual img{position:absolute;display:block;max-width:none;width:820px;height:auto;left:-260px;top:-148px;clip-path:inset(0 0 0 410px)}
 
@@ -41,6 +41,7 @@
 /* Section 02 only */
 .issue{padding-bottom:94px}.issue .tool-map{height:auto;min-height:0;margin-top:30px;background:none;display:grid;grid-template-columns:repeat(5,1fr);gap:18px;position:relative}.issue .tool{position:static;width:auto;min-height:164px;padding:24px 18px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:14px;text-align:center;border:1px solid #dce9e1;border-radius:14px;box-shadow:0 10px 22px #47604f12;color:var(--navy);font-size:14px;line-height:1.65}.issue .tool:first-letter{display:grid;place-items:center;width:48px;height:48px;border-radius:12px;background:#e6f7ed;color:#26955f;font-size:25px}.issue .tool b{font-weight:700}.issue-note{margin:22px auto 0;width:min(100% - 64px,1000px);text-align:center;color:#536b60;font-size:13px}.issue-note:before{content:"";display:inline-block;width:22px;height:1px;background:#5abb86;vertical-align:middle;margin:0 9px 3px 0}@media(max-width:760px){.issue .tool-map{grid-template-columns:repeat(2,1fr);gap:10px}.issue .tool{min-height:126px;padding:16px 8px;font-size:12px}.issue .tool:first-letter{width:36px;height:36px;font-size:20px}.issue .tool:last-child{grid-column:span 2}.issue-note{font-size:11px;width:calc(100% - 36px)}}
 /* Section 02 icon element refinement */
+.issue-mobile-break{display:none}
 .issue .tool:first-letter{display:initial;width:auto;height:auto;border-radius:0;background:transparent;color:inherit;font-size:inherit}.issue .tool-icon{display:grid;place-items:center;width:48px;height:48px;border-radius:12px;background:#e6f7ed;color:#26955f;font-size:25px;line-height:1}@media(max-width:760px){.issue .tool-icon{width:36px;height:36px;font-size:20px}}
 /* Section 02: larger icon-card copy */
 .issue .tool{gap:19px}.issue .tool-icon{width:50px;height:50px;font-size:26px}.issue .tool b{padding:0 8px;color:var(--navy);font-size:19px;line-height:1.55;font-weight:800;letter-spacing:.01em}@media(max-width:760px){.issue .tool{gap:13px}.issue .tool b{font-size:16px}.issue .tool-icon{width:40px;height:40px;font-size:21px}}
@@ -184,3 +185,206 @@
 
 #practical-knowhow{scroll-margin-top:96px}
 footer a[aria-disabled="true"]{pointer-events:none;cursor:default}
+.hero-mobile-break{display:none}
+.story-mobile-break{display:none}
+.monitor-copy h2 .monitor-title-mid,.monitor-copy h2 .monitor-title-end{color:#fff}
+
+/* Mobile completion pass — confined to the phone layout so the approved PC view is unchanged. */
+@media (max-width:760px){
+  html{scroll-padding-top:76px}
+  body{min-width:0;overflow-x:hidden}
+  img,svg{max-width:100%}
+  .container,.hero-inner{width:calc(100% - 36px)}
+  .section{padding:76px 0}
+  .section h2{font-size:27px;line-height:1.5;letter-spacing:.015em}
+  .section-lead{font-size:14px;line-height:1.9}
+
+  /* Header: retain the formal logo and the primary conversion path without compressing desktop nav. */
+  .site-header{height:66px;padding:0 24px;display:grid;grid-template-columns:minmax(0,1fr) auto;justify-content:initial;gap:12px}
+  .site-header .official-logo{width:144px;height:34px;flex:0 1 144px}
+  .site-header .header-actions{display:flex;margin-left:0;min-width:0;flex:0 0 auto}
+  .site-header .button.small{min-height:40px;padding:9px 13px;font-size:11px;white-space:nowrap}
+
+  /* Hero */
+  .hero-inner{padding:38px 0 36px}
+  .kicker{margin-bottom:12px;font-size:11px;line-height:1.65}
+  .hero h1{font-size:clamp(22.5px,6vw,24px);line-height:1.52;letter-spacing:.005em}
+  .hero .hero-desktop-break{display:none}
+  .hero .hero-mobile-break{display:block}
+  .hero .hero-first-line,.hero .hero-mobile-end{display:block;white-space:nowrap}
+  .hero .hero-mobile-continue{white-space:nowrap}
+  .hero .lead{width:100%;max-width:100%;margin:18px 0 22px;font-size:14px;line-height:1.9;overflow-wrap:anywhere}
+  .hero .buttons{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.62fr);gap:10px;width:100%}
+  .hero .buttons .button,.hero .buttons .outline{width:100%;min-width:0;min-height:50px;padding:12px 10px;font-size:14px;white-space:nowrap}
+  .hero .reassurance{justify-content:flex-start;gap:clamp(8px,3vw,13px);margin-top:15px;font-size:clamp(10px,2.8vw,11px);white-space:nowrap}
+  .hero-visual{height:304px;margin-top:20px}
+  .hero-reference-visual img{width:486px;left:-217px;top:-83px;clip-path:inset(0 0 0 253px)}
+
+  /* Store-management cards: replace the desktop map with a readable, non-overlapping grid. */
+  .issue .tool-map{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;width:100%;height:auto;margin-top:33px;padding:0;background:none;transform:none}
+  .issue .tool{position:relative;inset:auto!important;width:auto;min-height:88px;padding:13px 11px;border-radius:12px;font-size:12px;line-height:1.55}
+  .issue .tool:nth-child(5){grid-column:1 / -1;width:calc(50% - 5px);justify-self:center}
+  .issue-note{margin-top:22px;font-size:12px;line-height:1.85}
+
+  /* Section 02: preserve natural Japanese phrase breaks without changing the PC layout. */
+  .issue h2{font-size:clamp(24px,6.8vw,27px);line-height:1.48;letter-spacing:0}
+  .issue .issue-mobile-break{display:block}
+  .issue .issue-title-line-one,.issue .issue-title-line-two,.issue .issue-title-line-three{white-space:nowrap}
+  .issue .section-lead{font-size:14px;line-height:1.85;letter-spacing:0}
+  .issue .section-lead br{display:none}
+  .issue .section-lead span{display:block;white-space:nowrap}
+  .issue-note{width:calc(100% - 36px);font-size:12px;line-height:1.85}
+  .issue-note:before{display:none}
+  .issue-note span{display:block;white-space:nowrap}
+
+  /* Story and proof sections */
+  .practical-knowhow{padding:76px 0 56px}
+  .practical-knowhow-copy h2{font-size:29px;line-height:1.48}
+  .practical-knowhow-body{max-width:100%;font-size:14px;line-height:1.95;letter-spacing:0;text-align:left}
+  .practical-knowhow-body .keep-word,.practical-knowhow-emphasis .keep-word,.story .keep-word{white-space:nowrap}
+  .practical-knowhow-media{width:100%;max-width:390px}
+  .story{padding-top:64px}
+  .story .split{gap:30px}
+  .story .split>div:first-child>p:not(.emphasis){text-align:left;letter-spacing:0;overflow-wrap:normal;word-break:normal}
+  .story .story-desktop-break{display:none}
+  .story .story-mobile-break{display:block}
+  .story .connection{padding:20px 15px}
+  .connection-nodes{gap:2px;padding:21px 0 19px}
+  .connection-nodes span{font-size:10px}
+  .emphasis{font-size:17px!important;line-height:1.75}
+
+  /* All explanatory card groups use a comfortable single column on a phone. */
+  .changes{padding-bottom:58px}
+  .changes .change-grid,.difference-grid{grid-template-columns:1fr}
+  .changes .change-grid{gap:13px;margin-top:31px}
+  .changes .change-grid article{padding:20px 18px}
+  .changes .change-grid h3{font-size:18px}
+  .changes .change-grid p{margin:10px 0;padding:10px 12px;font-size:13px;line-height:1.7}
+  .effects>.container{grid-template-columns:minmax(0,1fr);gap:34px}
+  .effects .split>div:first-child h2{font-size:27px;line-height:1.52}
+  .effects .effect-list{width:100%;min-width:0;max-width:100%;gap:12px}
+  .effects .effect-list article{width:100%;min-width:0;grid-template-columns:52px minmax(0,1fr);column-gap:9px;min-height:152px;padding:15px 12px}
+  .effects .effect-list article>div{min-width:0}
+  .effects .effect-list h3{font-size:17px;line-height:1.5}
+  .effects .effect-list p{font-size:14px;line-height:1.7}
+  .effects .effect-nowrap{white-space:nowrap}
+  .effects{padding-bottom:58px}
+  .difference .heading{margin-bottom:30px}
+  .difference .heading h2{font-size:28px;line-height:1.52}
+  .difference-grid{gap:12px}
+  .difference-grid article{min-height:0;padding:20px 18px}
+  .difference-grid h3{min-height:0;margin:16px 0 14px;font-size:17px}
+  .difference-grid ul{font-size:13px}
+  .difference{padding-bottom:58px}
+
+  /* Product screen: the application remains wide and legible without a scrolling nav strip. */
+  .screens .center h2{font-size:28px;line-height:1.52}
+  .screen-pills{gap:7px;margin-bottom:16px}
+  .screen-pills span{padding:7px 10px;font-size:12px}
+  .screens{padding-bottom:60px}
+  .screens .showcase{display:grid;grid-template-columns:minmax(0,1fr);width:100%;min-height:0;margin-top:31px;border-radius:15px;overflow:hidden}
+  .screens .showcase nav{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));width:100%;gap:6px;overflow:visible;padding:10px;border-right:0;border-bottom:1px solid #dcece2}
+  .screens .showcase nav button{min-width:0;margin:0;padding:9px 7px;font-size:11px;line-height:1.4;text-align:center;white-space:normal}
+  .screens .showcase nav button:last-child{grid-column:1 / -1}
+  .screens #screen-panel{width:100%;min-width:0}
+  .screens .screen-copy{padding:20px 15px 0}
+  .screens .screen-copy h3{font-size:20px}
+  .screens .product-demo{width:auto;min-height:0;margin:16px 10px 18px;padding:10px}
+  .dashboard-overview{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+  .dashboard-card{min-width:0;min-height:238px;padding:11px 9px}
+  .dashboard-card-head{align-items:flex-start}
+  .dashboard-card-head p{font-size:11px;line-height:1.45;overflow-wrap:normal;word-break:normal}
+  .dashboard-list{font-size:9px;line-height:1.55;overflow-wrap:normal;word-break:normal}
+  .dashboard-link{font-size:9px}
+
+  /* Industry grid, setup, monitor, FAQ and final CTA */
+  .industries{padding:76px 0 58px!important}
+  .industries-heading h2{font-size:26px!important;line-height:1.5}
+  .industry-card-grid{gap:11px!important}
+  .industries .industry-card{min-height:0!important}
+  .industries .industry-photo{aspect-ratio:1!important}
+  .industries .industry-card h3{display:grid;min-height:48px;align-content:center;font-size:12px}
+  .industries .industry-card:nth-child(11) h3{padding-block:1px;line-height:1.38}
+  .support{padding:76px 0 70px!important}
+  .support-head{margin-bottom:32px!important}
+  .support-head h2{font-size:29px;line-height:1.48}
+  .support-layout{gap:34px!important}
+  .support-devices{min-height:350px!important;padding:38px 5px 0 43px}
+  .support-steps{gap:11px}
+  .support-steps .setup-step{min-height:98px!important;padding:14px 12px}
+  .setup-step h3{font-size:16px}
+  .setup-step p{font-size:12px;line-height:1.65}
+  .support-cta{margin-top:32px!important}
+  .support-cta .button{width:100%;min-width:0;min-height:52px;white-space:nowrap}
+  .monitor{padding:78px 0!important}
+  .monitor>.container{gap:34px!important}
+  .monitor-copy h2{font-size:32px!important;line-height:1.42}
+  .monitor-card{padding:25px 20px 21px!important}
+  .monitor-benefits{gap:10px;font-size:13px!important}
+  .monitor-card .white{min-height:51px;white-space:nowrap}
+  .monitor-copy h2 .monitor-title-mid,.monitor-copy h2 .monitor-title-end{color:#fff}
+  .monitor-copy .monitor-title-end,.monitor-copy .monitor-brand{white-space:nowrap}
+  .monitor .monitor-card-kicker{color:#4f5d6b!important;opacity:1;font-weight:700}
+  .monitor .monitor-card-note{color:#586575!important;opacity:1;font-weight:600}
+  .faq-redesign{padding:76px 0 70px!important}
+  .faq-heading h2{font-size:30px!important}
+  .faq-redesign .faq-list{gap:9px!important}
+  .faq-redesign .faq-list summary{min-height:0;padding:14px 48px 14px 14px;font-size:14px;line-height:1.7;word-break:auto-phrase;overflow-wrap:normal;line-break:strict}
+  /* FAQ回答は、スマホでも語の途中で折り返さず自然な日本語のまとまりで読む。 */
+  .faq-redesign .faq-answer{gap:9px;padding:0 15px 16px 14px;font-size:14px;line-height:1.82}
+  .faq-redesign .faq-answer span{min-width:0;word-break:auto-phrase;overflow-wrap:normal;line-break:strict}
+  .faq-redesign .faq-cta{margin-top:31px!important;padding:24px 17px}
+  .faq-redesign .faq-cta .button{width:100%;min-height:51px;padding-inline:12px;white-space:nowrap}
+  .final-redesign{padding:78px 0 70px!important}
+  .final-copy h2{font-size:30px;line-height:1.48}
+  .final-main-text{font-size:14px;line-height:1.9}
+  .final-device-stage{min-height:270px;padding:35px 2px 0 25px}
+  .final-benefits{margin:34px 0 28px!important}
+  .final-benefit{padding:17px 18px}
+  .final-action .button{min-height:53px;white-space:nowrap}
+  footer .footer-top{padding:31px 0}
+  footer .footer-top .official-logo{width:168px;height:38px}
+  footer .footer-top>div{margin-top:22px;gap:8px 14px}
+  footer .footer-top a{font-size:11px}
+}
+
+@media (max-width:380px){
+  .container,.hero-inner{width:calc(100% - 32px)}
+  .site-header{padding:0 20px;gap:8px}
+  .site-header .official-logo{width:132px;height:32px;flex-basis:132px}
+  .site-header .button.small{padding:9px 11px;font-size:10px}
+  .hero h1{font-size:22.5px}
+  .hero .buttons .button,.hero .buttons .outline{font-size:13px}
+  .hero .reassurance{font-size:10px}
+  .hero-visual{height:292px}
+  .hero-reference-visual img{width:468px;left:-211px;top:-80px;clip-path:inset(0 0 0 244px)}
+  .issue .tool{font-size:11px}
+  .practical-knowhow-copy h2,.support-head h2{font-size:27px}
+  .final-copy h2{font-size:28px}
+}
+
+@media (max-width:410px){
+  .difference .heading>p:last-child{max-width:280px;margin-left:0;margin-right:0}
+}
+
+/* Pre-release mobile wrap corrections — phone layout only. */
+@media (max-width:760px){
+  .hero .lead,
+  .changes .change-grid p,
+  .difference-grid h3,
+  .setup-step p,
+  .monitor-benefits li,
+  .faq-heading .section-lead{
+    word-break:auto-phrase!important;
+    overflow-wrap:normal!important;
+    line-break:strict!important;
+  }
+
+  .practical-title-end{display:block;white-space:nowrap}
+  .screens .center h2{font-size:27px!important;letter-spacing:.01em!important}
+  .final-mobile-list p{white-space:nowrap}
+}
+
+@media (max-width:410px){
+  .effects .split>div:first-child h2{font-size:24px!important;letter-spacing:-.01em!important}
+}
